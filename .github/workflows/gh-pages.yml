@@ -32,12 +32,12 @@ jobs:
             - name: Publish Docs 🎉
               run: |
                   npm install
-                  echo "/* updated `date "+%Y-%m-%d %H:%M:%S"` */" >> ./src/AntDesign.Pro/wwwroot/service-worker.published.js
-                  cd ./src/AntDesign.Pro/wwwroot
+                  echo "/* updated `date "+%Y-%m-%d %H:%M:%S"` */" >> ./src/AntDesign.Pro.Template/wwwroot/service-worker.published.js
+                  cd ./src/AntDesign.Pro.Template/wwwroot
                   cp -rf gh-pages/* gh-pages/.nojekyll gh-pages/.spa ./
                   cd ../../../
                   dotnet build ./AntDesign.Pro.sln
-                  dotnet publish ./src/AntDesign.Pro/AntDesign.Pro.csproj -c Release -o cargo
+                  dotnet publish ./src/AntDesign.Pro.Template/AntDesign.Pro.Template.csproj -c Release -o cargo
 
             - name: Publish to Nuget ✔
               run: |

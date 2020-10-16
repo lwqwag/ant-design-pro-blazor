@@ -24,7 +24,7 @@ jobs:
       - name: Check Building ⚙
         run: |
           npm install
-          cd ./src/AntDesign.Pro/wwwroot
+          cd ./src/AntDesign.Pro.Template/wwwroot
           cp -rf gh-pages/* gh-pages/.nojekyll gh-pages/.spa ./
           cd ../../../
           dotnet build ./AntDesign.Pro.sln

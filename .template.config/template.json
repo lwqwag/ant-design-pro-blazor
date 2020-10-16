@@ -15,6 +15,11 @@
     "sourceName": "AntDesign.Pro.Template",
     "preferNameDirectory": true,
     "symbols": {
+        "name": {
+            "type": "parameter",
+            "dataType": "text",
+            "defaultValue": "AntDesign.Pro"
+        },
         "full": {
             "type": "parameter",
             "dataType": "bool",
@@ -66,7 +71,7 @@
     "primaryOutputs": [
         {
             "condition": "(host != 'hosted')",
-            "path": "AntDesign.Pro.csproj"
+            "path": "AntDesign.Pro.Template.csproj"
         },
         {
             "condition": "(host == 'hosted')",
@@ -76,13 +81,13 @@
     "sources": [
         {
             "condition": "(host != 'hosted')",
-            "source": "./src/AntDesign.Pro",
+            "source": "./src/AntDesign.Pro.Template",
             "target": "./",
             "modifiers": [
                 {
                     "exclude": [
-                        "AntDesign.Pro.csproj",
-                        "AntDesign.Pro.csproj.DotSettings"
+                        "AntDesign.Pro.Template.csproj",
+                        "AntDesign.Pro.Template.csproj.DotSettings"
                     ]
                 },
                 {
@@ -134,13 +139,13 @@
         },
         {
             "condition": "(host == 'hosted')",
-            "source": "./src/AntDesign.Pro",
+            "source": "./src/AntDesign.Pro.Template",
             "target": "./src/Client/",
             "modifiers": [
                 {
                     "exclude": [
-                        "AntDesign.Pro.csproj",
-                        "AntDesign.Pro.csproj.DotSettings"
+                        "AntDesign.Pro.Template.csproj",
+                        "AntDesign.Pro.Template.csproj.DotSettings"
                     ]
                 },
                 {
