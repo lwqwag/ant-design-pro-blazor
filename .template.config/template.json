@@ -15,11 +15,6 @@
     "sourceName": "AntDesign.Pro.Template",
     "preferNameDirectory": true,
     "symbols": {
-        "name": {
-            "type": "parameter",
-            "dataType": "text",
-            "defaultValue": "AntDesign.Pro"
-        },
         "full": {
             "type": "parameter",
             "dataType": "bool",
@@ -57,37 +52,23 @@
                 "value": "AntDesign.Pro.Layout"
             },
             "replaces": "{pro-layout}"
-        },
-        "replace-project-dir": {
-            "condition": "(host == 'hosted')",
-            "type": "generated",
-            "generator": "constant",
-            "parameters": {
-                "value": "<SolutionDir>../../</SolutionDir>"
-            },
-            "replaces": "<SolutionDir>./</SolutionDir>"
         }
     },
     "primaryOutputs": [
         {
-            "condition": "(host != 'hosted')",
-            "path": "AntDesign.Pro.Template.csproj"
-        },
-        {
-            "condition": "(host == 'hosted')",
-            "path": "AntDesign.Pro.sln"
+            "path": "./"
         }
     ],
     "sources": [
         {
             "condition": "(host != 'hosted')",
-            "source": "./src/AntDesign.Pro.Template",
+            "source": "./src/AntDesign.Pro",
             "target": "./",
             "modifiers": [
                 {
                     "exclude": [
-                        "AntDesign.Pro.Template.csproj",
-                        "AntDesign.Pro.Template.csproj.DotSettings"
+                        "AntDesign.Pro.csproj",
+                        "AntDesign.Pro.csproj.DotSettings"
                     ]
                 },
                 {
@@ -139,13 +120,13 @@
         },
         {
             "condition": "(host == 'hosted')",
-            "source": "./src/AntDesign.Pro.Template",
+            "source": "./src/AntDesign.Pro",
             "target": "./src/Client/",
             "modifiers": [
                 {
                     "exclude": [
-                        "AntDesign.Pro.Template.csproj",
-                        "AntDesign.Pro.Template.csproj.DotSettings"
+                        "AntDesign.Pro.csproj",
+                        "AntDesign.Pro.csproj.DotSettings"
                     ]
                 },
                 {
@@ -167,10 +148,12 @@
             "condition": "(host == 'hosted')",
             "source": "./.template.config/templates/wasm",
             "target": "./src/Client/",
-            "rename": {
-                "AntDesign.Pro.Template": "AntDesign.Pro.Template.Client"
-            },
             "modifiers": [
+                 {
+                    "exclude": [
+                        "AntDesign.Pro.Template.csproj"
+                    ]
+                },
                 {
                     "condition": "(full)",
                     "exclude": [
